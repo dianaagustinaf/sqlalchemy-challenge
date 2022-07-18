@@ -42,9 +42,9 @@ def welcome():
     to ="http://127.0.0.1:5000/api/v1.0/tobs"
     st ="http://127.0.0.1:5000/api/v1.0/<start>"
     se ="http://127.0.0.1:5000/api/v1.0/<start>/<end>"
-    ex = "Dates example: "
-    ex1 = "http://127.0.0.1:5000/api/v1.0/2016-06-24/2016-09-24"
-    fyi= "FYI= last date available 2017-08-23"
+    
+    ex = "http://127.0.0.1:5000/api/v1.0/2016-06-24/2016-09-24"
+    txt2= "FYI= last date available 2017-08-23. Dates example: "
 
     listurl = []
     listurl.append(pr)
@@ -52,12 +52,8 @@ def welcome():
     listurl.append(to)
     listurl.append(st)
     listurl.append(se)
-    listurl.append(ex)
-    listurl.append(ex1)
-    listurl.append(fyi)
 
-
-    return render_template("index.html", txt=txt, listurl=listurl)
+    return render_template("index.html", txt=txt, listurl=listurl, txt2=txt2, ex=ex)
 
 
 ########################################################################
@@ -176,7 +172,7 @@ def start(start,end=None):
 
 
 
-############## MAIN ##############
+##################################### MAIN ##############
 
 if __name__ == '__main__':
     app.run(debug=True)
